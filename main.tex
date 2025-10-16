@@ -1,0 +1,50 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{tocloft}
+\geometry{margin=1.5cm}
+
+\renewcommand{\cftdot}{.}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\newenvironment{song}{\begin{flushleft}}{\end{flushleft}}
+
+\newenvironment{chorus}
+  {\begin{verse}\itshape}
+  {\end{verse}}
+
+% Command for song title (numbering will be added by Python)
+\newcommand{\songtitle}[1]{%
+  \vspace*{1.5\baselineskip}% space BEFORE the title (kept even at top of page)
+  {\centering\fontsize{12}{14}\selectfont\bfseries #1\par}%
+  \vspace{0.5\baselineskip}% small space AFTER the title before lyrics
+  \addcontentsline{toc}{section}{#1}%
+  \markboth{#1}{#1}%
+}
+
+\begin{document}
+% Cover page
+\begin{titlepage}
+  \centering
+  \vspace*{3cm}
+  {\Huge\bfseries St. Albani Church\\[1cm]}
+  {\Large\itshape A Collection of Songs for Worship\\[1cm]}
+  {\Large\bfseries Odense, Danmark\\[1cm]}
+  {\large Compiled October 12, 2025}
+  \vfill
+\end{titlepage}
+
+% Table of contents
+\begin{multicols}{2}
+\setlength{\parskip}{0pt}
+	\tableofcontents
+\end{multicols}
+\clearpage
+
+% Include songs from the generated file
+\input{songs_sorted.tex}
+
+\end{document}

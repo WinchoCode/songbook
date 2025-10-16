@@ -1,0 +1,27 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{multicol}
+\usepackage{geometry}
+\geometry{margin=2cm}
+
+\newenvironment{song}{\begin{flushleft}\itshape}{\end{flushleft}}
+
+% Command for song title (numbering will be added by Python)
+\newcommand{\songtitle}[1]{%
+  \clearpage
+  \section*{\centering #1}%
+  \addcontentsline{toc}{section}{#1}%
+  \markboth{#1}{#1}%
+}
+
+\begin{document}
+\tableofcontents
+\clearpage
+
+\begin{multicols}{2}
+% The script will insert \input{songs/...} lines here in sorted order
+\end{multicols}
+
+\end{document}
