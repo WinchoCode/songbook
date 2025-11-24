@@ -14,3 +14,6 @@
 
 ## GUI Option
 Run `python songbook_gui.py` to add/edit songs and generate PDF without touching LaTeX directly. -- This is still not in place, it doesn´t work
+
+# Install packages
+pip install -r requirements.txt
