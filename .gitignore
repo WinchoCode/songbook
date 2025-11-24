@@ -5,6 +5,8 @@
 *.toc
 *.fls
 *.fdb_latexmk
+*.pdf
+*.synctex.gz
 
 #Ignore venv
 songbook_venv/

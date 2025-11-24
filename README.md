@@ -15,5 +15,10 @@
 ## GUI Option
 Run `python songbook_gui.py` to add/edit songs and generate PDF without touching LaTeX directly. -- This is still not in place, it doesn´t work
 
-# Install packages
+## Install packages
 pip install -r requirements.txt
+
+### For Latex packages:
+1. Download TeX Live installer: https://tug.org/texlive/acquire-netinstall.html
+2. Run installer → choose Full scheme (ensures all packages included).
+3. By default, it installs to C:\texlive\2025\bin\windows. Be sure to add the path to the Environment Variables -> user variables -> path
