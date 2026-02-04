@@ -9,7 +9,7 @@
 ## Optional Workflow
 1. Create a folder called "songs"
 2. In that folder, create individual files for each song using the song_template.tex as example.
-3. Run `python sort_songs_alphabetically.py.py` → creates `songs_sorted.tex`.
+3. Run `python sort_songs_alphabetically.py` → creates `songs_sorted.tex`.
 4. Compile with `latexmk -xelatex main.tex` → `main.pdf`.
 
 ## GUI Option
