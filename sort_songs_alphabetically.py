@@ -40,11 +40,10 @@ for i, (title, filename, content) in enumerate(songs_sorted, start=1):
     )
 
     # Clean up extra whitespaces
-    new_content = new_content.strip()
+    #new_content = '\n'.join(line for line in new_content.split('\n') if line.strip())
 
     # Add commands to prevent page/column breaks within songs
-    wrapped_content = f"\\par\\nonpagebreak[4]\n{new_content}\n\\par"
-    renumbered_blocks.append(wrapped_content)
+    renumbered_blocks.append(new_content)
 
 # Write to output file
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
