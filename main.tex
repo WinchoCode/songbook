@@ -5,12 +5,19 @@
 \usepackage{multicol}
 \usepackage{geometry}
 \usepackage{tocloft}
+\usepackage{needspace}
 \geometry{margin=1.5cm}
 
 \renewcommand{\cftdot}{.}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
-\newenvironment{song}{\begin{flushleft}}{\end{flushleft}}
+\newenvironment{song}{
+    \par\nopagebreak[4]
+    \begin{flushleft}
+  }{
+    \end{flushleft}
+    \par
+  }
 
 \newenvironment{chorus}
   {\begin{verse}\itshape}
@@ -18,7 +25,8 @@
 
 % Command for song title (numbering will be added by Python)
 \newcommand{\songtitle}[1]{%
-  \vspace*{1.5\baselineskip}% space BEFORE the title (kept even at top of page)
+  \needspace{6\baselineskip}% Ensure at least 6 lines on current page
+  \vspace*{1\baselineskip}% space BEFORE the title (kept even at top of page)
   {\centering\fontsize{12}{14}\selectfont\bfseries #1\par}%
   \vspace{0.5\baselineskip}% small space AFTER the title before lyrics
   \addcontentsline{toc}{section}{#1}%
@@ -33,7 +41,7 @@
   {\Huge\bfseries St. Albani Church\\[1cm]}
   {\Large\itshape A Collection of Songs for Worship\\[1cm]}
   {\Large\bfseries Odense, Danmark\\[1cm]}
-  {\large Compiled 2 February, 2026}
+  {\large Compiled 4 February, 2026}
   \vfill
 \end{titlepage}
 
